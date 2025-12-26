@@ -10,21 +10,21 @@ export default function KrishnaStore() {
   const instagramLink = "https://instagram.com/krishnaanand534";
 
   return (
-    <div className="min-h-screen bg-[#0f1f17] text-[#d4af37] font-serif">
+    <div className="min-h-screen font-serif text-[#d4af37] bg-[#0f1f17]">
       {/* Header */}
-      <header className="flex items-center justify-between px-8 py-4 bg-[#12261c] sticky top-0 z-50 border-b border-[#d4af37]/30">
+      <header className="flex items-center justify-between px-8 py-4 bg-[#1a2a1f] sticky top-0 z-50 border-b border-[#d4af37]/30 shadow-md">
         <div>
           <h1 className="text-3xl tracking-wide">Krishna</h1>
           <p className="text-xs uppercase tracking-widest">The Lord of Fashion</p>
         </div>
         <div className="flex gap-3">
           <a href={instagramLink} target="_blank">
-            <Button className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37] hover:text-[#0f1f17]">
+            <Button className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
               <Instagram className="mr-2 h-4 w-4" /> Instagram
             </Button>
           </a>
           <a href={whatsappLink} target="_blank">
-            <Button className="bg-[#7a1f2b] text-[#d4af37] hover:bg-[#5c1721]">
+            <Button className="bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
               <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
             </Button>
           </a>
@@ -32,7 +32,7 @@ export default function KrishnaStore() {
       </header>
 
       {/* Hero Section */}
-      <section className="grid md:grid-cols-2 gap-10 px-8 py-20 items-center bg-gradient-to-b from-[#0f1f17] to-[#1b3326]">
+      <section className="grid md:grid-cols-2 gap-10 px-8 py-20 items-center bg-gradient-to-b from-[#1a2a1f] via-[#3b1a1a] to-[#12261c]">
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <h2 className="text-5xl leading-tight mb-6">Where Tradition Drapes Elegance</h2>
           <p className="text-lg text-[#f0e6c8] mb-8">
@@ -40,21 +40,21 @@ export default function KrishnaStore() {
           </p>
           <div className="flex gap-4">
             <a href={whatsappLink} target="_blank">
-              <Button size="lg" className="bg-[#7a1f2b] text-[#d4af37] hover:bg-[#5c1721]">
+              <Button size="lg" className="bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
                 <ShoppingBag className="mr-2 h-5 w-5" /> Order on WhatsApp
               </Button>
             </a>
             <a href="#collection">
-              <Button size="lg" variant="outline" className="border-[#d4af37] text-[#d4af37]">Explore Collection</Button>
+              <Button size="lg" variant="outline" className="border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37]/10">Explore Collection</Button>
             </a>
           </div>
         </motion.div>
-        <div className="rounded-2xl bg-[#1e3a2b] h-[420px] shadow-inner flex items-center justify-center">
-          <span className="text-[#d4af37]/60">Hero Image (Palace / Ethnic Model)</span>
+        <div className="rounded-2xl h-[420px] bg-gradient-to-br from-[#1a2a1f] via-[#3b1a1a] to-[#12261c] flex items-center justify-center shadow-inner">
+          <span className="text-[#d4af37] text-xl">Hero Image Placeholder</span>
         </div>
       </section>
 
-      {/* Trust Elements */}
+      {/* Trust Section */}
       <section className="px-8 py-10 bg-[#12261c]">
         <div className="grid md:grid-cols-3 gap-6 text-center">
           {["Handpicked Designs", "Premium Quality Fabrics", "Trusted by 1000+ Women"].map((item) => (
@@ -66,17 +66,17 @@ export default function KrishnaStore() {
         </div>
       </section>
 
-      {/* Categories */}
-      <section id="collection" className="px-8 py-16">
+      {/* Collection */}
+      <section id="collection" className="px-8 py-16 bg-[#1b3326]">
         <h3 className="text-3xl mb-10">Our Collections</h3>
         <div className="grid md:grid-cols-3 gap-8">
           {["Daily Wear Kurtis", "Festive Kurtis", "New Arrivals"].map((cat) => (
-            <Card key={cat} className="rounded-2xl overflow-hidden bg-[#1b3326] border border-[#d4af37]/30">
-              <div className="h-56 bg-[#244735] flex items-center justify-center">Image</div>
+            <Card key={cat} className="rounded-2xl overflow-hidden bg-[#244735] border border-[#d4af37]/30 shadow-lg">
+              <div className="h-56 flex items-center justify-center bg-gradient-to-br from-[#244735] via-[#3b1a1a] to-[#1a2a1f] text-[#d4af37]/60">Image</div>
               <CardContent className="p-5">
                 <h4 className="text-xl mb-3">{cat}</h4>
                 <a href={whatsappLink} target="_blank">
-                  <Button className="w-full bg-[#7a1f2b] text-[#d4af37] hover:bg-[#5c1721]">Order on WhatsApp</Button>
+                  <Button className="w-full bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">Order on WhatsApp</Button>
                 </a>
               </CardContent>
             </Card>

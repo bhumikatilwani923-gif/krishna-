@@ -1,4 +1,4 @@
-     // pages/index.js
+// pages/index.js
 import { Card } from "../components/ui/Card";
 import { CardContent } from "../components/ui/CardContent";
 import { Button } from "../components/ui/Button";
@@ -9,7 +9,7 @@ export default function KrishnaStore() {
   const whatsappLink = "https://wa.me/918764020205?text=Hello%20Krishna%20-%20The%20Lord%20of%20Fashion";
   const instagramLink = "https://instagram.com/krishnaanand534";
 
-  // Inline styles
+  // Styles
   const goldText = { color: "#d4af37" };
   const sectionPadding = { padding: "4rem 2rem" };
   const cardStyle = {
@@ -18,18 +18,6 @@ export default function KrishnaStore() {
     borderRadius: "1rem",
     boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
     overflow: "hidden"
-  };
-  const buttonStyleSmall = {
-    backgroundColor: "transparent",
-    color: "#d4af37",
-    padding: "0.3rem 0.6rem",
-    border: "1px solid #d4af37",
-    borderRadius: "0.3rem",
-    cursor: "pointer",
-    fontSize: "0.8rem",
-    display: "flex",
-    alignItems: "center",
-    gap: "0.2rem"
   };
   const buttonStyle = {
     backgroundColor: "#7a1f2b",
@@ -43,6 +31,7 @@ export default function KrishnaStore() {
 
   return (
     <div style={{ fontFamily: "serif", backgroundColor: "#0f1f17", position: "relative" }}>
+
       {/* Header */}
       <header style={{
         display: "flex",
@@ -55,17 +44,45 @@ export default function KrishnaStore() {
       }}>
         <div>
           <h1 style={{ ...goldText, fontSize: "2rem" }}>Krishna</h1>
-          <p style={{ ...goldText, fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>
-            The Lord of Fashion
-          </p>
+          <p style={{ ...goldText, fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>The Lord of Fashion</p>
         </div>
-        {/* Small buttons on the top-right corner */}
-        <div style={{ display: "flex", gap: "0.5rem" }}>
+
+        {/* Red vertical buttons */}
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "0.5rem",
+          position: "absolute",
+          top: "1rem",
+          right: "1rem"
+        }}>
           <a href={instagramLink} target="_blank" rel="noreferrer">
-            <button style={buttonStyleSmall}><Instagram style={{ fontSize: "1rem" }} /> Instagram</button>
+            <div style={{
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#b91c1c",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              <Instagram style={{ color: "#d4af37", fontSize: "1.2rem" }} />
+            </div>
           </a>
           <a href={whatsappLink} target="_blank" rel="noreferrer">
-            <button style={buttonStyleSmall}><MessageCircle style={{ fontSize: "1rem" }} /> WhatsApp</button>
+            <div style={{
+              width: "40px",
+              height: "40px",
+              backgroundColor: "#b91c1c",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "6px",
+              cursor: "pointer"
+            }}>
+              <MessageCircle style={{ color: "#d4af37", fontSize: "1.2rem" }} />
+            </div>
           </a>
         </div>
       </header>
@@ -83,8 +100,8 @@ export default function KrishnaStore() {
         <img src="/rose-bottom-right.png" alt="Rose" style={{ position: "absolute", bottom: "-30px", right: "-30px", width: "100px", opacity: 0.3, pointerEvents: "none" }} />
         <img src="/petal.png" alt="Petal" style={{ position: "absolute", top: "40%", left: "20%", width: "40px", transform: "rotate(30deg)", opacity: 0.2, pointerEvents: "none" }} />
         <img src="/petal.png" alt="Petal" style={{ position: "absolute", top: "30%", right: "25%", width: "35px", transform: "rotate(-45deg)", opacity: 0.2, pointerEvents: "none" }} />
-        
-        {/* Golden sparkle hints */}
+
+        {/* Golden sparkles */}
         <div style={{ position: "absolute", top: "10%", left: "50%", width: "2px", height: "2px", backgroundColor: "#ffd700", borderRadius: "50%", opacity: 0.6 }}></div>
         <div style={{ position: "absolute", bottom: "20%", right: "40%", width: "2px", height: "2px", backgroundColor: "#ffd700", borderRadius: "50%", opacity: 0.5 }}></div>
 
@@ -151,4 +168,4 @@ export default function KrishnaStore() {
       </footer>
     </div>
   );
-            } 
+                     }

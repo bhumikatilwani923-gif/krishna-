@@ -1,4 +1,4 @@
-// pages/index.js
+    // pages/index.js
 import { Card } from "../components/ui/Card";
 import { CardContent } from "../components/ui/CardContent";
 import { Button } from "../components/ui/Button";
@@ -9,74 +9,100 @@ export default function KrishnaStore() {
   const whatsappLink = "https://wa.me/918764020205?text=Hello%20Krishna%20-%20The%20Lord%20of%20Fashion";
   const instagramLink = "https://instagram.com/krishnaanand534";
 
+  // Inline styles
+  const goldText = { color: "#d4af37" };
+  const sectionPadding = { padding: "4rem 2rem" };
+  const cardStyle = {
+    background: "linear-gradient(to bottom right, #244735, #3b1a1a, #1a2a1f)",
+    border: "2px solid #d4af37",
+    borderRadius: "1rem",
+    boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
+    overflow: "hidden"
+  };
+  const heroStyle = {
+    height: "420px",
+    borderRadius: "1rem",
+    background: "linear-gradient(to bottom right, #1a2a1f, #3b1a1a, #12261c)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#d4af37",
+    fontSize: "1.5rem"
+  };
+  const buttonStyle = {
+    backgroundColor: "#7a1f2b",
+    color: "#d4af37",
+    padding: "0.7rem 1.5rem",
+    border: "2px solid #d4af37",
+    borderRadius: "0.5rem",
+    cursor: "pointer",
+    marginTop: "1rem"
+  };
+
   return (
-    <div className="min-h-screen font-serif text-[#d4af37] bg-[#0f1f17]">
+    <div style={{ fontFamily: "serif", backgroundColor: "#0f1f17" }}>
       {/* Header */}
-      <header className="flex items-center justify-between px-8 py-4 bg-[#1a2a1f] sticky top-0 z-50 border-b border-[#d4af37]/30 shadow-md">
+      <header style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "1rem 2rem",
+        backgroundColor: "#1a2a1f",
+        borderBottom: "2px solid #d4af37"
+      }}>
         <div>
-          <h1 className="text-3xl tracking-wide">Krishna</h1>
-          <p className="text-xs uppercase tracking-widest">The Lord of Fashion</p>
+          <h1 style={{ ...goldText, fontSize: "2rem" }}>Krishna</h1>
+          <p style={{ ...goldText, fontSize: "0.8rem", textTransform: "uppercase", letterSpacing: "0.1em" }}>
+            The Lord of Fashion
+          </p>
         </div>
-        <div className="flex gap-3">
-          <a href={instagramLink} target="_blank">
-            <Button className="bg-transparent border border-[#d4af37] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
-              <Instagram className="mr-2 h-4 w-4" /> Instagram
-            </Button>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <a href={instagramLink} target="_blank" rel="noreferrer">
+            <Button style={buttonStyle}><Instagram style={{ marginRight: "0.5rem" }} /> Instagram</Button>
           </a>
-          <a href={whatsappLink} target="_blank">
-            <Button className="bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
-              <MessageCircle className="mr-2 h-4 w-4" /> WhatsApp
-            </Button>
+          <a href={whatsappLink} target="_blank" rel="noreferrer">
+            <Button style={buttonStyle}><MessageCircle style={{ marginRight: "0.5rem" }} /> WhatsApp</Button>
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="grid md:grid-cols-2 gap-10 px-8 py-20 items-center bg-gradient-to-b from-[#1a2a1f] via-[#3b1a1a] to-[#12261c]">
+      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", alignItems: "center", ...sectionPadding, background: "linear-gradient(to bottom, #1a2a1f, #3b1a1a, #12261c)" }}>
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-          <h2 className="text-5xl leading-tight mb-6">Where Tradition Drapes Elegance</h2>
-          <p className="text-lg text-[#f0e6c8] mb-8">
+          <h2 style={{ fontSize: "3rem", marginBottom: "1rem", ...goldText }}>Where Tradition Drapes Elegance</h2>
+          <p style={{ fontSize: "1.2rem", marginBottom: "1.5rem", color: "#f0e6c8" }}>
             Handpicked daily & festive kurtis inspired by Indian palaces, warm candlelight, and timeless grace.
           </p>
-          <div className="flex gap-4">
-            <a href={whatsappLink} target="_blank">
-              <Button size="lg" className="bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">
-                <ShoppingBag className="mr-2 h-5 w-5" /> Order on WhatsApp
-              </Button>
-            </a>
-            <a href="#collection">
-              <Button size="lg" variant="outline" className="border-[#d4af37] text-[#d4af37] hover:bg-[#d4af37]/10">Explore Collection</Button>
-            </a>
-          </div>
+          <a href={whatsappLink} target="_blank" rel="noreferrer">
+            <button style={buttonStyle}><ShoppingBag style={{ marginRight: "0.5rem" }} /> Order on WhatsApp</button>
+          </a>
         </motion.div>
-        <div className="rounded-2xl h-[420px] bg-gradient-to-br from-[#1a2a1f] via-[#3b1a1a] to-[#12261c] flex items-center justify-center shadow-inner">
-          <span className="text-[#d4af37] text-xl">Hero Image Placeholder</span>
-        </div>
+        <div style={heroStyle}>Hero Image Placeholder</div>
       </section>
 
       {/* Trust Section */}
-      <section className="px-8 py-10 bg-[#12261c]">
-        <div className="grid md:grid-cols-3 gap-6 text-center">
+      <section style={{ ...sectionPadding, backgroundColor: "#12261c", textAlign: "center" }}>
+        <div style={{ display: "flex", justifyContent: "space-around", flexWrap: "wrap", gap: "2rem" }}>
           {["Handpicked Designs", "Premium Quality Fabrics", "Trusted by 1000+ Women"].map((item) => (
-            <div key={item} className="flex flex-col items-center gap-3">
-              <CheckCircle className="h-8 w-8" />
-              <p className="tracking-wide">{item}</p>
+            <div key={item} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.5rem" }}>
+              <CheckCircle style={{ color: "#d4af37", fontSize: "2rem" }} />
+              <p style={{ ...goldText }}>{item}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Collection */}
-      <section id="collection" className="px-8 py-16 bg-[#1b3326]">
-        <h3 className="text-3xl mb-10">Our Collections</h3>
-        <div className="grid md:grid-cols-3 gap-8">
+      <section id="collection" style={{ ...sectionPadding, backgroundColor: "#1b3326" }}>
+        <h3 style={{ fontSize: "2rem", marginBottom: "2rem", ...goldText }}>Our Collections</h3>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(250px,1fr))", gap: "2rem" }}>
           {["Daily Wear Kurtis", "Festive Kurtis", "New Arrivals"].map((cat) => (
-            <Card key={cat} className="rounded-2xl overflow-hidden bg-[#244735] border border-[#d4af37]/30 shadow-lg">
-              <div className="h-56 flex items-center justify-center bg-gradient-to-br from-[#244735] via-[#3b1a1a] to-[#1a2a1f] text-[#d4af37]/60">Image</div>
-              <CardContent className="p-5">
-                <h4 className="text-xl mb-3">{cat}</h4>
-                <a href={whatsappLink} target="_blank">
-                  <Button className="w-full bg-[#7a1f2b] text-[#d4af37] hover:bg-gradient-to-r hover:from-[#d4af37] hover:to-[#ffd700] hover:text-[#0f1f17]">Order on WhatsApp</Button>
+            <Card key={cat} style={cardStyle}>
+              <div style={{ height: "200px", display: "flex", alignItems: "center", justifyContent: "center", color: "#d4af37" }}>Image</div>
+              <CardContent style={{ padding: "1rem" }}>
+                <h4 style={{ fontSize: "1.2rem", marginBottom: "0.5rem", ...goldText }}>{cat}</h4>
+                <a href={whatsappLink} target="_blank" rel="noreferrer">
+                  <button style={buttonStyle}>Order on WhatsApp</button>
                 </a>
               </CardContent>
             </Card>
@@ -85,25 +111,23 @@ export default function KrishnaStore() {
       </section>
 
       {/* About */}
-      <section className="px-8 py-20 bg-[#12261c]">
-        <div className="max-w-3xl">
-          <h3 className="text-3xl mb-6">About Krishna</h3>
-          <p className="text-[#f0e6c8] leading-relaxed">
-            Krishna is a celebration of Indian femininity and craftsmanship. Each kurti is chosen
-            with care — reflecting palace-era richness, earthy tones, and the warmth of tradition.
-            From everyday comfort to festive charm, we dress women in grace.
-          </p>
-        </div>
+      <section style={{ ...sectionPadding, backgroundColor: "#12261c", maxWidth: "800px", margin: "0 auto" }}>
+        <h3 style={{ fontSize: "2rem", marginBottom: "1rem", ...goldText }}>About Krishna</h3>
+        <p style={{ color: "#f0e6c8", lineHeight: "1.6" }}>
+          Krishna is a celebration of Indian femininity and craftsmanship. Each kurti is chosen
+          with care — reflecting palace-era richness, earthy tones, and the warmth of tradition.
+          From everyday comfort to festive charm, we dress women in grace.
+        </p>
       </section>
 
       {/* Footer */}
-      <footer className="px-8 py-10 bg-[#0a140f] border-t border-[#d4af37]/30 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm">© {new Date().getFullYear()} Krishna — The Lord of Fashion</p>
-        <div className="flex gap-4">
-          <a href={instagramLink} target="_blank"><Instagram className="h-5 w-5" /></a>
-          <a href={whatsappLink} target="_blank"><MessageCircle className="h-5 w-5" /></a>
+      <footer style={{ padding: "2rem", backgroundColor: "#0a140f", borderTop: "2px solid #d4af37", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+        <p style={{ ...goldText, fontSize: "0.9rem" }}>© {new Date().getFullYear()} Krishna — The Lord of Fashion</p>
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <a href={instagramLink} target="_blank" rel="noreferrer"><Instagram style={{ color: "#d4af37", fontSize: "1.5rem" }} /></a>
+          <a href={whatsappLink} target="_blank" rel="noreferrer"><MessageCircle style={{ color: "#d4af37", fontSize: "1.5rem" }} /></a>
         </div>
       </footer>
     </div>
   );
-}
+              } 

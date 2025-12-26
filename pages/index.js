@@ -1,4 +1,4 @@
-    // pages/index.js
+     // pages/index.js
 import { Card } from "../components/ui/Card";
 import { CardContent } from "../components/ui/CardContent";
 import { Button } from "../components/ui/Button";
@@ -19,15 +19,17 @@ export default function KrishnaStore() {
     boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
     overflow: "hidden"
   };
-  const heroStyle = {
-    height: "420px",
-    borderRadius: "1rem",
-    background: "linear-gradient(to bottom right, #1a2a1f, #3b1a1a, #12261c)",
+  const buttonStyleSmall = {
+    backgroundColor: "transparent",
+    color: "#d4af37",
+    padding: "0.3rem 0.6rem",
+    border: "1px solid #d4af37",
+    borderRadius: "0.3rem",
+    cursor: "pointer",
+    fontSize: "0.8rem",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    color: "#d4af37",
-    fontSize: "1.5rem"
+    gap: "0.2rem"
   };
   const buttonStyle = {
     backgroundColor: "#7a1f2b",
@@ -40,7 +42,7 @@ export default function KrishnaStore() {
   };
 
   return (
-    <div style={{ fontFamily: "serif", backgroundColor: "#0f1f17" }}>
+    <div style={{ fontFamily: "serif", backgroundColor: "#0f1f17", position: "relative" }}>
       {/* Header */}
       <header style={{
         display: "flex",
@@ -48,7 +50,8 @@ export default function KrishnaStore() {
         alignItems: "center",
         padding: "1rem 2rem",
         backgroundColor: "#1a2a1f",
-        borderBottom: "2px solid #d4af37"
+        borderBottom: "2px solid #d4af37",
+        position: "relative"
       }}>
         <div>
           <h1 style={{ ...goldText, fontSize: "2rem" }}>Krishna</h1>
@@ -56,28 +59,44 @@ export default function KrishnaStore() {
             The Lord of Fashion
           </p>
         </div>
-        <div style={{ display: "flex", gap: "1rem" }}>
+        {/* Small buttons on the top-right corner */}
+        <div style={{ display: "flex", gap: "0.5rem" }}>
           <a href={instagramLink} target="_blank" rel="noreferrer">
-            <Button style={buttonStyle}><Instagram style={{ marginRight: "0.5rem" }} /> Instagram</Button>
+            <button style={buttonStyleSmall}><Instagram style={{ fontSize: "1rem" }} /> Instagram</button>
           </a>
           <a href={whatsappLink} target="_blank" rel="noreferrer">
-            <Button style={buttonStyle}><MessageCircle style={{ marginRight: "0.5rem" }} /> WhatsApp</Button>
+            <button style={buttonStyleSmall}><MessageCircle style={{ fontSize: "1rem" }} /> WhatsApp</button>
           </a>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", alignItems: "center", ...sectionPadding, background: "linear-gradient(to bottom, #1a2a1f, #3b1a1a, #12261c)" }}>
+      <section style={{
+        ...sectionPadding,
+        textAlign: "center",
+        background: "linear-gradient(to bottom, #1a2a1f, #3b1a1a, #12261c)",
+        position: "relative",
+        overflow: "hidden"
+      }}>
+        {/* Rose petals */}
+        <img src="/rose-top-left.png" alt="Rose" style={{ position: "absolute", top: "-30px", left: "-30px", width: "100px", opacity: 0.3, pointerEvents: "none" }} />
+        <img src="/rose-bottom-right.png" alt="Rose" style={{ position: "absolute", bottom: "-30px", right: "-30px", width: "100px", opacity: 0.3, pointerEvents: "none" }} />
+        <img src="/petal.png" alt="Petal" style={{ position: "absolute", top: "40%", left: "20%", width: "40px", transform: "rotate(30deg)", opacity: 0.2, pointerEvents: "none" }} />
+        <img src="/petal.png" alt="Petal" style={{ position: "absolute", top: "30%", right: "25%", width: "35px", transform: "rotate(-45deg)", opacity: 0.2, pointerEvents: "none" }} />
+        
+        {/* Golden sparkle hints */}
+        <div style={{ position: "absolute", top: "10%", left: "50%", width: "2px", height: "2px", backgroundColor: "#ffd700", borderRadius: "50%", opacity: 0.6 }}></div>
+        <div style={{ position: "absolute", bottom: "20%", right: "40%", width: "2px", height: "2px", backgroundColor: "#ffd700", borderRadius: "50%", opacity: 0.5 }}></div>
+
         <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
           <h2 style={{ fontSize: "3rem", marginBottom: "1rem", ...goldText }}>Where Tradition Drapes Elegance</h2>
-          <p style={{ fontSize: "1.2rem", marginBottom: "1.5rem", color: "#f0e6c8" }}>
+          <p style={{ fontSize: "1.2rem", marginBottom: "2rem", color: "#f0e6c8" }}>
             Handpicked daily & festive kurtis inspired by Indian palaces, warm candlelight, and timeless grace.
           </p>
           <a href={whatsappLink} target="_blank" rel="noreferrer">
             <button style={buttonStyle}><ShoppingBag style={{ marginRight: "0.5rem" }} /> Order on WhatsApp</button>
           </a>
         </motion.div>
-        <div style={heroStyle}>Hero Image Placeholder</div>
       </section>
 
       {/* Trust Section */}
@@ -121,7 +140,9 @@ export default function KrishnaStore() {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: "2rem", backgroundColor: "#0a140f", borderTop: "2px solid #d4af37", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" }}>
+      <footer style={{ padding: "2rem", backgroundColor: "#0a140f", borderTop: "2px solid #d4af37", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", position: "relative" }}>
+        {/* Subtle golden sparkle */}
+        <div style={{ position: "absolute", top: "10%", left: "10%", width: "2px", height: "2px", backgroundColor: "#ffd700", borderRadius: "50%", opacity: 0.6 }}></div>
         <p style={{ ...goldText, fontSize: "0.9rem" }}>© {new Date().getFullYear()} Krishna — The Lord of Fashion</p>
         <div style={{ display: "flex", gap: "1rem" }}>
           <a href={instagramLink} target="_blank" rel="noreferrer"><Instagram style={{ color: "#d4af37", fontSize: "1.5rem" }} /></a>
@@ -130,4 +151,4 @@ export default function KrishnaStore() {
       </footer>
     </div>
   );
-              } 
+            } 
